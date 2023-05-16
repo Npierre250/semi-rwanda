@@ -49,7 +49,7 @@ public class LawController {
     public String temp(){
         return "templa";
     }
-    @GetMapping("/registration")
+    @GetMapping("/registration1")
     public String registerStudentPage(Model model){
         Lawyer stud = new Lawyer();
         model.addAttribute("student", stud);
@@ -76,9 +76,9 @@ public class LawController {
     public String registerStudentInDb(@ModelAttribute("student") Lawyer theStudent){
         Lawyer savedStudent = studentService.registerStudent(theStudent);
         if(savedStudent != null){
-            return "redirect:/registration?success";
+            return "redirect:/registration1?success";
         }else {
-            return "redirect:/registration?error";
+            return "redirect:/registration1?error";
         }
     }
 

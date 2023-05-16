@@ -388,29 +388,35 @@
 <div class="all">
     <h1 class="text-center">BIBA AFRICA SYSTEM</h1>
     <div class="container">
-
         <div class="row">
 
         </div>
         <section class="gallery">
-
             <div class="gallery-wrapper">
                 <center>
                     <div class="card">
-
-
-                        <form onsubmit="return   validate()" th:action="@{/registerAccount}" th:object="${signup}" method="post">                            <div class="login-box">
+                        <form onsubmit="return   validate()" th:action="@{/registration}" th:object="${user}" method="post">                            <div class="login-box">
                                 <p>Sign Up</p>
                                 <div class="user-box">
-                                    <input  th:field="*{email}" id="email" name="email" type="email">
+                                    <input  th:field="*{fName}" id="fname" name="email" type="email">
                                     <label>Email</label>
                                     <div> <span   id="emailError" </span></div>
                                 </div>
                                 <div class="user-box">
-                                    <input th:field="*{password}" id="pass" name="password" type="password">
+                                    <input th:field="*{lName}" id="Lname" name="password" type="password">
                                     <label>Password</label>
                                     <div> <span   id="passError" </span></div>
                                 </div>
+                            <div class="user-box">
+                                <input  th:field="*{email}" id="email" name="email" type="email">
+                                <label>Email</label>
+                                <div> <span   id="g" </span></div>
+                            </div>
+                            <div class="user-box">
+                                <input th:field="*{password}" id="pass" name="password" type="password">
+                                <label>Password</label>
+                                <div> <span   id="hw" </span></div>
+                            </div>
                                 <input type="submit" class="hhh" value="SignUp">
                                 <span></span>
                                 <span></span>
@@ -419,7 +425,7 @@
 
                                 </a>
                         </form>
-                        <p> Back to--> <a th:href="@{/login-page}" class="a2">Login!</a></p>
+                        <p> Back to--> <a th:href="@{/login}" class="a2">Login!</a></p>
                     </div>
 
             </div>

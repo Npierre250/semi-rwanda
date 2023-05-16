@@ -392,16 +392,16 @@
                     <div class="card">
 
 
-                        <form onsubmit="return   validation()" th:action="@{/authentication}" th:object="${login}"   method="post">
+                        <form onsubmit="return   validation()" th:action="@{/login}"    method="post">
                             <div class="login-box">
                                 <p>Login</p>
                                 <div class="user-box">
-                                    <input  th:field="*{email}"  id="email" name="email" type="email">
+                                    <input  id="email" name="email" type="email">
                                     <label>Email</label>
                                     <div> <span id="userError"</span></div>
                                 </div>
                                 <div class="user-box">
-                                    <input th:field="*{password}"  id="pass" name="password" type="password">
+                                    <input   id="pass" name="password" type="password">
                                     <label>Password</label>
                                    <div> <span   id="passError" </span></div>
                                 </div>
@@ -413,7 +413,7 @@
 
                                 </a>
                         </form>
-                        <p>Don't have an account? <a th:href="@{/Signup}" class="a2">Sign up!</a></p>
+                        <p>Don't have an account? <a th:href="@{/registration}" class="a2">Sign up!</a></p>
                     </div>
 
             </div>
