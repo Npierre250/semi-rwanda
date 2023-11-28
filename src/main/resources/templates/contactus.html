@@ -175,6 +175,7 @@
       <li><a th:href="@{contact}">Suggestion</a></li>
       <li><a th:href="@{lawyer}">lawyer-descr</a></li>
       <li><a th:href="@{/logout}">logout</a></li>
+    </ul>
   </nav>
 </header>
 <div class="all">
@@ -187,7 +188,7 @@
         <form class="form" th:action="@{/regContactus}" th:Object="${contact}" method="post">
           <div class="group">
             <input th:field="*{namess}" placeholder="‎" type="text" required="">
-            <label for="Names"><b>Name</b></label>
+            <label><b>Name</b></label>
           </div>
           <div class="group">
             <input th:field="*{emaill}" placeholder="‎" type="text" id="email" name="name" required="">
@@ -203,6 +204,7 @@
 
     </div>
 
+  </div>
   </div>
 </body>
 </html>

@@ -4,17 +4,16 @@
   <meta charset="UTF-8">
   <title></title>
   <script>
+
     function confirmAction() {
-      var confirmation = confirm("Are you sure you want to delete?");
+      let confirmation = confirm("Are you sure you want to delete?");
       if (confirmation) {
-        // User clicked "OK" in the confirmation dialog
-        // Continue with the link navigation
         return true;
       } else {
-        // User clicked "Cancel" in the confirmation dialog
-        // Cancel the link navigation
+       
         return false;
       }
+
     }
   </script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
@@ -144,8 +143,7 @@
 
   <div class="row">
     <div class="col-lg-3">
-      <!--    we use th:href to refer to another page-->
-      <!--    we use @{/} f   or linking the controller return page-->
+     
     </div>
   </div>
   <table class="table table-striped table-bordered table-hover">
@@ -179,11 +177,11 @@
     </tbody>
   </table>
 
-  <input type="submit"Onclick="window.print()"value="Generate report">
+  <input type="submit" Onclick="window.print()" value="Generate report">
 
 </div>
 
-  <!--    Pagination configuration -->
+
   <table>
 
     <tr th:if="${totalPage > 1}">

@@ -177,7 +177,7 @@
 
 
             <li><a th:href="@{/logout}">logout</a></li>
-
+        </ul>
     </nav>
 </header>
 <div class="all">
@@ -190,7 +190,7 @@
                 <form class="form" th:action="@{/regContactus}" th:Object="${contact}" method="post">
                     <div class="group">
                         <input th:field="*{namess}" placeholder="‎" type="text" required="">
-                        <label for="Names">Name</label>
+                        <label >Name</label>
                     </div>
                     <div class="group">
                         <input th:field="*{emaill}" placeholder="‎" type="text" id="email" name="name" required="">
@@ -207,5 +207,6 @@
         </div>
 
     </div>
+</div>
 </body>
 </html>

@@ -10,4 +10,4 @@ FROM openjdk:8-jre-slim-stretch
 
 COPY --from=build /target/bibafrica-0.0.1-SNAPSHOT.jar bibafrica.jar
 
-ENTRYPOINT [ "java","-jar","bibafrica.jar" ]
+ENTRYPOINT [ "java","-jar","bibafrica.jar"]

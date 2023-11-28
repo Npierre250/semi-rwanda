@@ -145,17 +145,17 @@ public class LawController {
     public void exportCSV(HttpServletResponse response)
             throws Exception {
 
-        //set file name and content type
+
         String filename = "Volunteer-data.csv";
 
         response.setContentType("text/csv");
         response.setHeader(HttpHeaders.CONTENT_DISPOSITION,
                 "attachment; filename=\"" + filename + "\"");
-        //create a csv writer
+
         StatefulBeanToCsv<Lawyer> writer = new StatefulBeanToCsvBuilder<Lawyer>(response.getWriter())
                 .withQuotechar(CSVWriter.NO_QUOTE_CHARACTER).withSeparator(CSVWriter.DEFAULT_SEPARATOR).withOrderedResults(false)
                 .build();
-        //write all employees data to csv file
+
         writer.write(studentService.studentList());
 
     }
