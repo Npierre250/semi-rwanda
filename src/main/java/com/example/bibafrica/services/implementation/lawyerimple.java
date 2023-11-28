@@ -4,18 +4,25 @@ import com.example.bibafrica.model.Lawyer;
 import com.example.bibafrica.repository.LawyerRepository;
 import com.example.bibafrica.services.LawyerInterface;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Lazy
 @Service
 public class lawyerimple implements LawyerInterface {
-    @Autowired
+ 
     LawyerRepository studentRepository;
+
+    
+    public lawyerimple(LawyerRepository studentRepository) {
+        this.studentRepository = studentRepository;
+    }
 
     @Override
     public Lawyer registerStudent(Lawyer stud) {

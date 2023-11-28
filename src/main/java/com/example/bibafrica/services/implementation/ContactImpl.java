@@ -3,9 +3,12 @@ package com.example.bibafrica.services.implementation;
 import com.example.bibafrica.model.Contact;
 import com.example.bibafrica.repository.ContactRepository;
 import com.example.bibafrica.services.ContactService;
+
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+@Lazy
 @Service
 public class ContactImpl implements ContactService {
 
