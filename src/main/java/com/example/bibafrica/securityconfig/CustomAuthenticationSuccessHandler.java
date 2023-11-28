@@ -15,15 +15,12 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
     private final RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response
-            , Authentication authentication) throws IOException, ServletException {
+            , Authentication authentication) throws IOException {
 
-//        Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
-//        boolean isAdmin= authorities.stream()
-//                .anyMatch(authority -> authority.getAuthority().equals("ROLE_ADMIN"));
 
         HttpSession session = request.getSession();
         String email = authentication.getName();
-        if (email.contains("admin123")) {
+        if (email.contains("admin1")) {
             redirectStrategy.sendRedirect(request, response, "/admin");
         } else {
             redirectStrategy.sendRedirect(request, response, "/dashboard");

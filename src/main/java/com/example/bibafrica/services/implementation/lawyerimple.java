@@ -49,4 +49,5 @@ public class lawyerimple implements LawyerInterface {
         return this.studentRepository.findAll(pageable);
     }
 
+
 }

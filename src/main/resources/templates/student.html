@@ -259,9 +259,9 @@
       width: 100%;
       margin-bottom: 20px;
     }
-    .container {
+   .container {
       overflow: auto;
-      height: 550px;
+      height: 850px;
       width: 750px;
     }
     .lawyer1{
@@ -325,6 +325,7 @@
       border-radius: 0.25rem;
       transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     }
+
   </style>
 </head>
 <body>
@@ -335,11 +336,11 @@
       <li><a th:href="@{student-page}">Register</a></li>
       <li><a th:href="@{contact}">Suggestion</a></li>
       <li><a th:href="@{lawyer}">psycho-descr</a></li>
-      <li><a th:href="@{login-page}">logout</a></li>
+      <li><a th:href="@{/logout}">logout</a></li>
   </nav>
 </header>
 <div class="all">
-  <h1 class="text-center">BIBA AFRICA SYSTEM</h1>
+  <h1 class="text-center">LAWYER FARM SYSTEM</h1>
   <div class="container">
 
     <div class="row">
@@ -356,7 +357,7 @@
               <div class="login-box">
                 <p>provide your   case</p>
                   <div th:if="${param.success}">
-                      <p>Your  request is successfully  recorded</p>
+                      <p>Your  request is successfully  submitted. <br> Wait for response</p>
                   </div>
 
                   <div th:if="${param.error}">
@@ -365,7 +366,7 @@
 
                 <div class="user-box">
                   <input  th:field="*{id}" required="" name="email" type="text">
-                  <label>Email</label>
+                  <label>case Id</label>
                 </div>
                 <div class="user-box">
                   <input  th:field="*{names}" required="" name="email" type="text">
@@ -404,7 +405,6 @@
                 </a>
             </form>
           </div>
-
       </div>
       </center>
 

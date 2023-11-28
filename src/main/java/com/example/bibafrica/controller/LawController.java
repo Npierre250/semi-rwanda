@@ -1,5 +1,6 @@
 package com.example.bibafrica.controller;
 import com.example.bibafrica.model.Lawyer;
+import com.example.bibafrica.securityconfig.EmailSenderServiceConfig;
 import com.example.bibafrica.services.DatabasePDFService;
 import com.example.bibafrica.services.LawyerInterface;
 import com.opencsv.CSVWriter;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletResponse;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -23,8 +25,9 @@ import java.util.List;
 @Controller
 public class LawController {
     @Autowired
-    LawyerInterface  studentService;
-
+   private  LawyerInterface  studentService;
+    @Autowired
+   private EmailSenderServiceConfig emailSenderServiceConfig;
     @GetMapping("/home")
     public String homePage(Model model){
 
@@ -63,9 +66,10 @@ public class LawController {
     }
 
     @PostMapping("/register")
-    public String registerLawyer(@ModelAttribute("student") Lawyer theStudent){
+    public String registerLawyer(@ModelAttribute("student") Lawyer theStudent) throws MessagingException {
         Lawyer savedStudent = studentService.registerStudent(theStudent);
         if(savedStudent != null){
+            emailSenderServiceConfig.sendCitizenEmail(theStudent.getEmails(),"REGISTRATION",theStudent.getNames());
             return "redirect:/student-page?success";
         }else {
             return "redirect:/student-page?error";
@@ -73,9 +77,11 @@ public class LawController {
     }
 
     @PostMapping("/reg")
-    public String registerStudentInDb(@ModelAttribute("student") Lawyer theStudent){
+    public String registerStudentInDb(@ModelAttribute("student") Lawyer theStudent) throws MessagingException {
         Lawyer savedStudent = studentService.registerStudent(theStudent);
         if(savedStudent != null){
+            emailSenderServiceConfig.sendCitizenEmail(theStudent.getEmails(),"REGISTRATION",theStudent.getNames());
+
             return "redirect:/registration1?success";
         }else {
             return "redirect:/registration1?error";

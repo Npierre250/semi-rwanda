@@ -11,7 +11,6 @@ public interface LawyerInterface {
     void deleteStudent(Long stud);
     List<Lawyer> studentList();
     Lawyer findStudentByStudentId(Long stud);
-
     Page<Lawyer> pagenateStudent(int pageNo, int pageSize);
 
 }

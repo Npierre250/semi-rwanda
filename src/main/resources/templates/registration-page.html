@@ -266,9 +266,9 @@
     <nav>
       <ul>
         <li><a href="#">Home</a>
-        <li><a th:href="@{registration}">registration</a>
+        <li><a th:href="@{registration1}">registration</a>
 <!--        <li><a th:href="@{/home}">view</a></li>-->
-        <li><a th:href="@{/login-page}">logout</a></li>
+        <li><a th:href="@{/logout}">logout</a></li>
       </ul>
     </nav>
   </header>
@@ -285,7 +285,7 @@
         <div class="login-box">
             <div class="user-box">
               <input  th:field="*{id}" required="" name="id" type="text">
-              <label>Email</label>
+              <label>case Id</label>
             </div>
             <div class="user-box">
               <input  th:field="*{names}" required="" name="names" type="text">

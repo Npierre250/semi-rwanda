@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <style>
         .login-box {
             position: absolute;
@@ -14,9 +15,9 @@
             padding: 40px;
             margin: 20px auto;
             transform: translate(-50%, -55%);
-            background: rgba(0,0,0,.9);
+            background: rgba(0, 0, 0, .9);
             box-sizing: border-box;
-            box-shadow: 0 15px 25px rgba(0,0,0,.6);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
             border-radius: 10px;
             margin-top: 220px;
         }
@@ -58,8 +59,8 @@
             transition: .5s;
         }
 
-        .login-box .user-box input:focus ~ label,
-        .login-box .user-box input:valid ~ label {
+        .login-box .user-box input:focus~label,
+        .login-box .user-box input:valid~label {
             top: -20px;
             left: 0;
             color: #fff;
@@ -100,12 +101,14 @@
             background: linear-gradient(90deg, transparent, #fff);
             animation: btn-anim1 1.5s linear infinite;
         }
+
         @keyframes btn-anim1 {
             0% {
                 left: -100%;
             }
 
-            50%,100% {
+            50%,
+            100% {
                 left: 100%;
             }
         }
@@ -125,7 +128,8 @@
                 top: -100%;
             }
 
-            50%,100% {
+            50%,
+            100% {
                 top: 100%;
             }
         }
@@ -145,7 +149,8 @@
                 right: -100%;
             }
 
-            50%,100% {
+            50%,
+            100% {
                 right: 100%;
             }
         }
@@ -165,7 +170,8 @@
                 bottom: -100%;
             }
 
-            50%,100% {
+            50%,
+            100% {
                 bottom: 100%;
             }
         }
@@ -195,9 +201,10 @@
             padding: 20px;
         }
 
-        .all{
+        .all {
             background-color: #A2A378;
         }
+
         header {
             background-color: #333;
             color: #fff;
@@ -245,7 +252,7 @@
             color: #fff;
         }
 
-        nav ul li:hover > ul {
+        nav ul li:hover>ul {
             display: block;
         }
 
@@ -259,57 +266,66 @@
             width: 100%;
             margin-bottom: 20px;
         }
+
         .container {
             overflow: auto;
             height: 550px;
             width: 750px;
         }
-        .lawyer1{
+
+        .lawyer1 {
             height: 200px;
             width: 200px;
             background-color: #A2A378;
         }
-        .lawyer2{
+
+        .lawyer2 {
             height: 200px;
             width: 200px;
-            background-color:#A2A378;
+            background-color: #A2A378;
             margin-left: 210px;
             margin-top: -200px;
         }
-        .lawyer3{
+
+        .lawyer3 {
             height: 200px;
             width: 200px;
             margin-left: 410px;
             margin-top: -200px;
             background-color: #A2A378;
         }
-        .lawyer4{
+
+        .lawyer4 {
             height: 200px;
             width: 200px;
             background-color: #A2A378;
         }
-        .lawyer5{
+
+        .lawyer5 {
             height: 200px;
             width: 200px;
             margin-left: 210px;
             margin-top: -200px;
             background-color: #A2A378;
         }
-        .lawyer6{
+
+        .lawyer6 {
             height: 200px;
             width: 200px;
             margin-left: 410px;
             margin-top: -200px;
-            background-color:#A2A378;
+            background-color: #A2A378;
         }
-        .descr{
+
+        .descr {
             height: 200px;
             width: 600px;
             background-color: #99A98F;
             font-family: Arial;
             font-size: 20px;
         }
-        .hhh{
+
+        .hhh {
             display: inline-block;
             font-weight: 400;
             color: white;
@@ -323,104 +339,113 @@
             font-size: 1rem;
             line-height: 1.5;
             border-radius: 0.25rem;
-            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
         }
     </style>
 
 
     <script>
-        let  isemailvalid=true;
-        let ispassvalid=true;
+        let isemailvalid = true;
+        let ispassvalid = true;
 
-        function validation(){
-            if(document.getElementById("email").value==""){
-                isemailvalid=false;
-                document.getElementById("userError").innerHTML="Please fill up field with your email";
-                document.getElementById("userError").style.color="red";
-            }else if(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(document.getElementById("emailtxt").value)==false){
-                isemailvalid=false;
-                document.getElementById("userError").innerHTML="Invalid email, it must contain @ charactor.";
-                document.getElementById("userError").style.color="red";
-            }else{
-                isemailvalid=true;
-                document.getElementById("userError").innerHTML="";
+        function validation() {
+            if (document.getElementById("email").value == "") {
+                isemailvalid = false;
+                document.getElementById("userError").innerHTML = "Please fill up field with your email";
+                document.getElementById("userError").style.color = "red";
+            } else if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(document.getElementById("emailtxt").value) == false) {
+                isemailvalid = false;
+                document.getElementById("userError").innerHTML = "Invalid email, it must contain @ charactor.";
+                document.getElementById("userError").style.color = "red";
+            } else {
+                isemailvalid = true;
+                document.getElementById("userError").innerHTML = "";
             }
 
-            if(document.getElementById("pass").value==""){
-                ispassvalid=false;
-                document.getElementById("passError").innerHTML="Please provide your password."
-                document.getElementById("passError").style.color="red";
-            }else if(document.getElementById("pass").value.length < 8){
-                ispassvalid=false;
-                document.getElementById("passError").innerHTML="invalid password, it must have at list 8 charactors.";
-                document.getElementById("passError").style.color="red";
-            }else{
-                ispassvalid=true;
-                document.getElementById("passError").innerHTML="";
+            if (document.getElementById("pass").value == "") {
+                ispassvalid = false;
+                document.getElementById("passError").innerHTML = "Please provide your password."
+                document.getElementById("passError").style.color = "red";
+            } else if (document.getElementById("pass").value.length < 8) {
+                ispassvalid = false;
+                document.getElementById("passError").innerHTML = "invalid password, it must have at list 8 charactors.";
+                document.getElementById("passError").style.color = "red";
+            } else {
+                ispassvalid = true;
+                document.getElementById("passError").innerHTML = "";
             }
 
 
-            if(isemailvalid==false||ispassvalid==false){
+            if (isemailvalid == false || ispassvalid == false) {
                 return false;
-            }else{
+            } else {
                 return true;
             }
         }
     </script>
 </head>
+
 <body>
-<header>
-    <nav>
-        <ul>
-            <li><a th:href="@{come}">Home</a></li>
-            <li><a th:href="@{Signup}">SignUp</a></li>
+    <header>
+        <nav>
+            <ul>
+                <li><a th:href="@{come}">Home</a></li>
+                <li><a th:href="@{Signup}">SignUp</a></li>
 
 
-    </nav>
-</header>
-<div class="all">
-    <h1 class="text-center">BIBA AFRICA SYSTEM</h1>
-    <div class="container">
+        </nav>
+    </header>
+    <div class="all">
+        <h1 class="text-center">LAWYER FARM SYSTEM</h1>
+        <div class="container">
 
-        <div class="row">
-
-        </div>
-        <section class="gallery">
-
-            <div class="gallery-wrapper">
-                <center>
-                    <div class="card">
-
-
-                        <form onsubmit="return   validation()" th:action="@{/login}"    method="post">
-                            <div class="login-box">
-                                <p>Login</p>
-                                <div class="user-box">
-                                    <input  id="email" name="email" type="email">
-                                    <label>Email</label>
-                                    <div> <span id="userError"</span></div>
-                                </div>
-                                <div class="user-box">
-                                    <input   id="pass" name="password" type="password">
-                                    <label>Password</label>
-                                   <div> <span   id="passError" </span></div>
-                                </div>
-                                <input type="submit" class="hhh" value="login">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-
-                                </a>
-                        </form>
-                        <p>Don't have an account? <a th:href="@{/registration}" class="a2">Sign up!</a></p>
-                    </div>
+            <div class="row">
 
             </div>
-            </center>
+            <section class="gallery">
 
-    </div>
-    </main>
+                <div class="gallery-wrapper">
+                    <center>
+                        <div class="card">
+
+
+                            <form onsubmit="return   validation()" th:action="@{/login}" method="post">
+                                <div class="login-box">
+                                    <div th:if="${param.error}">
+                                        <div class="alert alert-danger"> invalid Email or Password</div>
+                                    </div>
+
+                                    <div th:if="${param.logout}">
+                                        <div class="alert alert-danger"> you have been logged out</div>
+                                    </div>
+                                    <p>Login</p>
+                                    <div class="user-box">
+                                        <input id="email" name="email" type="email">
+                                        <label>Email</label>
+                                        <div> <span id="userError" </span></div>
+                                    </div>
+                                    <div class="user-box">
+                                        <input id="pass" name="password" type="password">
+                                        <label>Password</label>
+                                        <div> <span id="passError" </span></div>
+                                    </div>
+                                    <input type="submit" class="hhh" value="login">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+
+                                    </a>
+                            </form>
+                            <p>Don't have an account? <a th:href="@{/registration}" class="a2">Sign up!</a></p>
+                        </div>
+
+                </div>
+                </center>
+
+        </div>
+        </main>
 
 </body>
+
 </html>

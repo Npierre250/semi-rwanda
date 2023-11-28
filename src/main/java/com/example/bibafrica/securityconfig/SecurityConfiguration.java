@@ -63,12 +63,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
               .passwordParameter("password")
               .successHandler(authenticationSuccessHandler)
               .and()
-              .sessionManagement() // add session management
-              .sessionFixation().migrateSession() // enable session fixation protection and migrate sessions
-              .maximumSessions(1) // allow only one session per user
-              .expiredUrl("/login?expired") // redirect to this URL if session is expired
+              .sessionManagement()
+              .sessionFixation().migrateSession()
+              .maximumSessions(1)
+              .expiredUrl("/login?expired")
               .and()
-              .invalidSessionUrl("/login?invalid") // redirect to
+              .invalidSessionUrl("/login?invalid")
               .and()
               .logout()
               .invalidateHttpSession(true)

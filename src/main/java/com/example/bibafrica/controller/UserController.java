@@ -1,6 +1,7 @@
 package com.example.bibafrica.controller;
 
 import com.example.bibafrica.DataTransferObject.UserRegistartionDto;
+import com.example.bibafrica.model.User;
 import com.example.bibafrica.services.UserInterface;
 
 import org.springframework.stereotype.Controller;
@@ -30,7 +31,11 @@ public class UserController {
     }
    @PostMapping
     public String registerUserAccount(@ModelAttribute("user")UserRegistartionDto dto){
+        User foundUser=userInterface.findByEmail(dto.getEmail());
+        if (foundUser!=null &&  (foundUser.getEmail().equalsIgnoreCase(dto.getEmail()))) {
+               return "redirect:/registration?error";   
+        }
         userInterface.saveAccount(dto);
-        return "redirect:/registration1?success";
+        return "redirect:/registration?success";
     }
 }

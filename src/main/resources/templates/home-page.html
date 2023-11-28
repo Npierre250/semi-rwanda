@@ -92,6 +92,31 @@
       height: 450px;
       width: 750px;
     }
+
+    table a {
+      text-decoration: none;
+      color: black;
+      font-size: 14px;
+      font-family: Arial, sans-serif; /* Set the font type */
+    }
+
+    table a:hover {
+      text-decoration: underline;
+    }
+
+    table span {
+      color: white;
+      font-size: 25px;
+      font-family: Arial, sans-serif; /* Set the font type */
+    }
+    .pag a{
+      background-color: green;
+      color: white;
+      border-radius: 20px;
+      padding: 15px 25px;
+      text-decoration: none;
+    }
+
   </style>
 </head>
 <body>
@@ -99,18 +124,18 @@
   <nav>
     <ul>
       <li><a th:href="@{inde}">Home</a></li>
-      <li><a th:href="@{registration}">Register</a></li>
+      <li><a th:href="@{registration1}">Register</a></li>
       <li><a th:href="@{exportCsv}">Download excel</a></li>
       <li><a th:href="@{exportPdf}">Download  pdf</a></li>
       <li><a th:href="@{home}">View</a></li>
       <li><a th:href="@{sear}">Search</a></li>
       <li><a th:href="@{display}">View-message</a></li>
-      <li><a th:href="@{login-page}">logout</a></li>
+      <li><a th:href="@{/logout}">logout</a></li>
     </ul>
   </nav>
 </header>
 <div class="all">
-  <h1 class="text-center">BIBA AFRICA</h1>
+  <h1 class="text-center">LAWYER FARM SYSTEM</h1>
 <div class="container">
 
   <div class="row">
@@ -157,8 +182,6 @@
   <input type="submit"Onclick="window.print()"value="Generate report">
 
 </div>
-
-
 
   <!--    Pagination configuration -->
   <table>

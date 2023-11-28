@@ -50,4 +50,9 @@ public class userServiceImp implements UserInterface {
      return    roles.stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
 
     }
+
+    @Override
+    public User findByEmail(String email) {
+      return userRepository.findByEmail(email);  
+    }
 }
