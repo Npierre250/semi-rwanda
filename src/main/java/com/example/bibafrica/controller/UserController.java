@@ -4,17 +4,19 @@ import com.example.bibafrica.DataTransferObject.UserRegistartionDto;
 import com.example.bibafrica.model.User;
 import com.example.bibafrica.services.UserInterface;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+@Lazy
 @Controller
 @RequestMapping("/registration")
 public class UserController {
     private final UserInterface userInterface;
-
+     @Autowired
     public UserController(UserInterface userInterface) {
         this.userInterface = userInterface;
     }

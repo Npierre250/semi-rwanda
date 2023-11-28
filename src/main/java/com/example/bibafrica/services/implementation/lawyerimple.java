@@ -17,7 +17,7 @@ import java.util.List;
 @Service
 public class lawyerimple implements LawyerInterface {
  
-    LawyerRepository studentRepository;
+   private LawyerRepository studentRepository;
 
     
     public lawyerimple(LawyerRepository studentRepository) {
