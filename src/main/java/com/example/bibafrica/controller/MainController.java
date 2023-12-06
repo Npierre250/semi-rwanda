@@ -17,16 +17,6 @@ public class MainController {
         return "login";
     }
 
-    @GetMapping("/homee")
-    public String welcomePage(){
-        return "hom";
-    }
-
-    @GetMapping("/index")
-    public String home(){
-        return "index";
-    }
-
     @GetMapping("/dashboard")
     @PreAuthorize("isAuthenticated()")
     public String dashboard() {
@@ -40,4 +30,5 @@ public class MainController {
         // Controller logic
         return "homes";
     }
+
 }
