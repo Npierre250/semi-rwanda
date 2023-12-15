@@ -3,7 +3,6 @@ package com.example.bibafrica.services.implementation;
 import com.example.bibafrica.model.Lawyer;
 import com.example.bibafrica.repository.LawyerRepository;
 import com.example.bibafrica.services.LawyerInterface;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -12,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Lazy
 @Service
@@ -39,6 +39,8 @@ public class lawyerimple implements LawyerInterface {
         studentRepository.deleteById(stud);
     }
 
+    
+
 
     @Override
     public List<Lawyer> studentList() {
@@ -54,6 +56,11 @@ public class lawyerimple implements LawyerInterface {
     public Page<Lawyer> pagenateStudent(int pageNo, int pageSize) {
         Pageable pageable= PageRequest.of(pageNo -1,pageSize);
         return this.studentRepository.findAll(pageable);
+    }
+
+    @Override
+    public Optional<Lawyer> getLowayer(Long id) {
+          return studentRepository.findById(id);
     }
 
 
